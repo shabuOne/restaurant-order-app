@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htmli lang="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,71 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <img src="images/pizza.jpg">
+        <header id="container-header">
+            <img id="header-background-image" src="images/pizza.jpg">
+            <div class="scrim"></div>
+            <div id="header-background-text">
+                <h1 id="header-title">Jimmy's Diner</h1>
+                <p id="header-subtitle">The best burgers and pizzas in town.</p>
+            </div>
         </header>
         <main>
-            <h1 id="main-header">Test H1</h1>
-            <p>Test this is a test</p>
+            <div id="food-items">
+                <div class="food-item">
+                    <img class="food-item-image" src="./images/pizza.png">
+                    <div class="food-item-details">
+                        <h2 class="food-title">Food Title</h2>
+                        <p class="food-subtitle">Food Subtitle Line with Text</p>
+                        <p class="price">99$</p>
+                    </div>
+                    <div class="add-remove-item">
+                        <button class="btn-round">-</button>
+                        <p class="item-count">99x</p>
+                        <button class="btn-round">+</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img class="food-item-image" src="./images/pizza.png">
+                    <div class="food-item-details">
+                        <h2 class="food-title">Food Title</h2>
+                        <p class="food-subtitle">Food Subtitle Line with Text</p>
+                        <p class="price">99$</p>
+                    </div>
+                    <div class="add-remove-item">
+                        <button class="btn-round">-</button>
+                        <p class="item-count">99x</p>
+                        <button class="btn-round">+</button>
+                    </div>
+                </div>
+                <div class="food-item">
+                    <img class="food-item-image" src="./images/pizza.png">
+                    <div class="food-item-details">
+                        <h2 class="food-title">Food Title</h2>
+                        <p class="food-subtitle">Food Subtitle Line with Text</p>
+                        <p class="price">99$</p>
+                    </div>
+                    <div class="add-remove-item">
+                        <button class="btn-round">-</button>
+                        <p class="item-count">99x</p>
+                        <button class="btn-round">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="order-summary">
+                <h1>Your order</h1>
+                <div id="order-items">
+                    <div class="order-item">
+                        <p class="order-item-count">99x</p>
+                        <p class="order-item-title">Food item</p>
+                        <p class="order-item-price">$99</p>
+                    </div>
+                </div>
+                <div id="">
+                    <p>Total price:</p>
+                    <p>$99</p>
+                </div>
+                <button>Complete order</button>
+            </div>
         </main>
         <script src="index.js" type="module"></script>
     </body>

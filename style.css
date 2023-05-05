@@ -1,3 +1,118 @@
-p {
-    color: blue;
+@font-face {
+    font-family: Smythe;
+    src: url(./fonts/Smythe-Regular.ttf);
+  }
+
+body {
+    font-family: 'Smythe', Arial, sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 520px;
+}
+
+#container-header {
+    position: relative;
+    max-height: 180px;
+}
+
+#header-background-image {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+}
+
+#header-background-text {
+    position: absolute;
+    left: 3rem;
+    top: 2rem;
+    color: white;
+}
+
+#header-title {
+    margin: 0.8rem 0 0;
+    font-size: 2.5rem;
+}
+
+#header-subtitle {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+}
+
+/* food items */
+
+#food-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.food-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 0;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.food-item-image {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 1;
+    margin-right: 1rem;
+}
+
+.food-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.75rem;
+}
+
+.food-subtitle {
+    margin: 0 0 0.5rem;
+    color: #8b8b8b;
+    font-size: 1rem;
+}
+
+.food-item-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    justify-content: center;
+}
+
+.price {
+    margin: 0;
+    color: #000;
+    font-size: 1.25rem;
+}
+
+.add-remove-item {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    align-items: center;
+}
+
+.btn-round {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: 1.5px solid #DEDEDE;
+    border-radius: 124px;
+    font-size: 1.2rem;
+    background-color: #fff;
+}
+
+.item-count {
+    margin: 0 1rem;
+    font-size: 1.75rem;
 }
