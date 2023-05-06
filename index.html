@@ -17,10 +17,10 @@
         </header>
         <main>
             <div id="food-items">
-                <div class="food-item">
+                <!--<div class="food-item border-bottom">
                     <img class="food-item-image" src="./images/pizza.png">
                     <div class="food-item-details">
-                        <h2 class="food-title">Food Title</h2>
+                        <h2 class="title-main title-food">Food Title</h2>
                         <p class="food-subtitle">Food Subtitle Line with Text</p>
                         <p class="price">99$</p>
                     </div>
@@ -29,48 +29,22 @@
                         <p class="item-count">99x</p>
                         <button class="btn-round">+</button>
                     </div>
-                </div>
-                <div class="food-item">
-                    <img class="food-item-image" src="./images/pizza.png">
-                    <div class="food-item-details">
-                        <h2 class="food-title">Food Title</h2>
-                        <p class="food-subtitle">Food Subtitle Line with Text</p>
-                        <p class="price">99$</p>
-                    </div>
-                    <div class="add-remove-item">
-                        <button class="btn-round">-</button>
-                        <p class="item-count">99x</p>
-                        <button class="btn-round">+</button>
-                    </div>
-                </div>
-                <div class="food-item">
-                    <img class="food-item-image" src="./images/pizza.png">
-                    <div class="food-item-details">
-                        <h2 class="food-title">Food Title</h2>
-                        <p class="food-subtitle">Food Subtitle Line with Text</p>
-                        <p class="price">99$</p>
-                    </div>
-                    <div class="add-remove-item">
-                        <button class="btn-round">-</button>
-                        <p class="item-count">99x</p>
-                        <button class="btn-round">+</button>
-                    </div>
-                </div>
+                </div>-->
             </div>
-            <div id="order-summary">
-                <h1>Your order</h1>
-                <div id="order-items">
-                    <div class="order-item">
+            <div id="order-summary" class="hidden">
+                <h1 class="title-main title-main-order">Your order</h1>
+                <div id="order-items" class="border-bottom-bold">
+                    <!--<div class="order-item">
                         <p class="order-item-count">99x</p>
                         <p class="order-item-title">Food item</p>
                         <p class="order-item-price">$99</p>
-                    </div>
+                    </div>-->
                 </div>
-                <div id="">
-                    <p>Total price:</p>
-                    <p>$99</p>
+                <div id="order-total">
+                    <p class="order-item-title">Total price:</p>
+                    <p class="order-item-price">$99</p>
                 </div>
-                <button>Complete order</button>
+                <button class="btn-primary">Complete order</button>
             </div>
         </main>
         <script src="index.js" type="module"></script>

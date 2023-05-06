@@ -49,11 +49,54 @@ main {
     background-color: rgba(0,0,0,0.25);
 }
 
+.border-bottom {
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.border-bottom-bold {
+    border-bottom: 2px solid #393333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Buttons */
+
+.btn-primary {
+    width: 100%;
+    height: 60px;
+    background: #16DB99;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 3px;
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #FFFFFF;
+}
+
+.btn-round {
+    
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: 1.5px solid #DEDEDE;
+    border-radius: 124px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: #fff;
+}
+
 /* food items */
 
 #food-items {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
 }
 
 .food-item {
@@ -61,7 +104,6 @@ main {
     flex-direction: row;
     justify-content: space-between;
     padding: 3rem 0;
-    border-bottom: 1px solid #D2D2D2;
 }
 
 .food-item-image {
@@ -69,11 +111,6 @@ main {
     height: 90px;
     flex-shrink: 1;
     margin-right: 1rem;
-}
-
-.food-title {
-    margin: 0 0 0.5rem;
-    font-size: 1.75rem;
 }
 
 .food-subtitle {
@@ -92,7 +129,6 @@ main {
 .price {
     margin: 0;
     color: #000;
-    font-size: 1.25rem;
 }
 
 .add-remove-item {
@@ -102,17 +138,68 @@ main {
     align-items: center;
 }
 
-.btn-round {
-    box-sizing: border-box;
-    width: 50px;
-    height: 50px;
-    border: 1.5px solid #DEDEDE;
-    border-radius: 124px;
-    font-size: 1.2rem;
-    background-color: #fff;
-}
-
 .item-count {
     margin: 0 1rem;
     font-size: 1.75rem;
+}
+
+/* Order Summary */
+
+#order-summary{
+    margin: 0;
+}
+
+#order-items {
+    margin-bottom: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.order-item-count, .order-item-price, .order-item-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.order-item-count {
+    margin-right: 0.75rem;
+}
+
+.order-item-title {
+    flex-grow: 2;
+}
+
+.order-item-price {
+    display: flex;
+    align-items: center;
+}
+
+#order-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:1.75rem;
+}
+
+/* Typography */
+
+.title-main, .order-item-count, .order-item-title {
+    font-size: 1.75rem;
+}
+
+.order-item-price, .price {
+    font-size: 1.25rem;
+}
+
+.title-food {
+    margin: 0 0 0.5rem;    
+}
+
+.title-main-order {
+    text-align: center;
+    margin: 2.5rem 0 4rem;
 }
