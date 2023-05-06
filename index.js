@@ -10,7 +10,8 @@ document.addEventListener('click', function(e){
 })
 
 function handleAddBtnClick(uuid) {
-    console.log(`add button of ${uuid} clicked`)
+    //console.log(`add button of ${uuid} clicked`)
+    //get index of fooditem
 }
 
 function getFoodMenuHtml() {
