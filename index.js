@@ -53,8 +53,29 @@ function getFoodMenuHtml() {
     return foodMenuHtml;
 }
 
+function getOrderSummaryHtml() {
+    let orderSummaryHtml = ``;
+    let orderItemTotal = 0;
+    menuArray.forEach(function(foodItem){
+        if(foodItem.amount > 0){
+            const foodItemTotal = foodItem.amount * foodItem.price;
+            orderItemTotal += foodItemTotal;
+            orderSummaryHtml += `
+            <div class="order-item">
+                <p class="order-item-count">${foodItem.amount}x</p>
+                <p class="order-item-title">${foodItem.name}</p>
+                <p class="order-item-price">$${foodItemTotal}</p>
+            </div>
+            `
+        }
+    })
+    document.getElementById('order-item-total').textContent = `$${orderItemTotal}`
+    return orderSummaryHtml;
+}
+
 function render(){
     document.getElementById('food-items').innerHTML = getFoodMenuHtml();
+    document.getElementById('order-items').innerHTML = getOrderSummaryHtml();
     //check fooditem.amount and hide or display amount + remove button
     //count basket
     let basket = 0;
