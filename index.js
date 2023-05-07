@@ -56,15 +56,24 @@ function getFoodMenuHtml() {
 function render(){
     document.getElementById('food-items').innerHTML = getFoodMenuHtml();
     //check fooditem.amount and hide or display amount + remove button
+    //count basket
+    let basket = 0;
     menuArray.forEach(function(foodItem){
+        //remove hidden class for count and remove btn
         if(foodItem.amount > 0){
             document.getElementById(`btn-remove-${foodItem.uuid}`).classList.remove('hidden');
             document.getElementById(`count-${foodItem.uuid}`).classList.remove('hidden');
-            console.log("hidden class removed")
-        } else if(foodItem.amount === 0) {
+            document.getElementById('order-summary').classList.remove('hidden');
+            basket += 1;
+        } 
+        //add hidden class for count and remove btn
+        else if(foodItem.amount === 0) {
             document.getElementById(`btn-remove-${foodItem.uuid}`).classList.add('hidden');
             document.getElementById(`count-${foodItem.uuid}`).classList.add('hidden');
-            console.log("hidden class added")
+        }
+        // hide and show order summary
+        if(foodItem.amount === 0 && basket === 0) {
+            document.getElementById('order-summary').classList.add('hidden');
         }
     });
 }
