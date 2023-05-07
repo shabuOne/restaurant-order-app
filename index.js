@@ -6,12 +6,29 @@ document.addEventListener('click', function(e){
     //add button
     if(e.target.dataset.add){
         handleAddBtnClick(e.target.dataset.add)
+    } else if(e.target.dataset.remove){
+        handleRemoveBtnClick(e.target.dataset.remove)
     }
 })
 
 function handleAddBtnClick(uuid) {
-    //console.log(`add button of ${uuid} clicked`)
-    //get index of fooditem
+    menuArray.forEach(function(foodItem){
+        if(foodItem.uuid === uuid) {
+            foodItem.amount += 1
+        }
+    })
+    render()
+}
+
+function handleRemoveBtnClick(uuid) {
+    menuArray.forEach(function(foodItem){
+        if(foodItem.uuid === uuid) {
+            if (foodItem.amount > 0) {
+                foodItem.amount -= 1
+            }
+        }
+    })
+    render()
 }
 
 function getFoodMenuHtml() {
@@ -23,11 +40,11 @@ function getFoodMenuHtml() {
             <div class="food-item-details">
                 <h2 class="title-main title-food">${foodItem.name}</h2>
                 <p class="food-subtitle">${foodItem.ingredients}</p>
-                <p class="price">${foodItem.price}</p>
+                <p class="price">$${foodItem.price}</p>
             </div>
             <div class="add-remove-item">
                 <button id="btn-remove-${foodItem.uuid}" class="btn-round hidden" data-remove="${foodItem.uuid}">-</button>
-                <p id="count-${foodItem.uuid}" class="item-count"></p>
+                <p id="count-${foodItem.uuid}" class="item-count hidden">${foodItem.amount}x</p>
                 <button id="btn-add-${foodItem.uuid}" class="btn-round" data-add="${foodItem.uuid}">+</button>
             </div>
         </div>
@@ -38,6 +55,18 @@ function getFoodMenuHtml() {
 
 function render(){
     document.getElementById('food-items').innerHTML = getFoodMenuHtml();
+    //check fooditem.amount and hide or display amount + remove button
+    menuArray.forEach(function(foodItem){
+        if(foodItem.amount > 0){
+            document.getElementById(`btn-remove-${foodItem.uuid}`).classList.remove('hidden');
+            document.getElementById(`count-${foodItem.uuid}`).classList.remove('hidden');
+            console.log("hidden class removed")
+        } else if(foodItem.amount === 0) {
+            document.getElementById(`btn-remove-${foodItem.uuid}`).classList.add('hidden');
+            document.getElementById(`count-${foodItem.uuid}`).classList.add('hidden');
+            console.log("hidden class added")
+        }
+    });
 }
 
 render()
