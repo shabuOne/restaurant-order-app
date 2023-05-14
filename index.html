@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Restaurant Oder App</title>
         <link rel="stylesheet" href="style.css">
+        <!-- google icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
         <header id="container-header">
@@ -31,9 +33,26 @@
                     <p class="order-item-title">Total price:</p>
                     <p class="order-item-price" id="order-item-total">$</p>
                 </div>
-                <button class="btn-primary">Complete order</button>
+                <button id="btn-submit-order" class="btn-primary">Complete order</button>
             </div>
         </main>
+        <div id="overlay">
+            <div id="popup">
+                <div id="popup-header">
+                    <h1 class="h1-popup">Enter card details</h1>
+                    <button class="btn-close btn-round"><span class="material-symbols-outlined">close</span></button>
+                </div>
+                <form class="form-order">
+                    <label for="name" class="label">Your name</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" class="input-order input-order-font">
+                    <label for="cardNumber" class="label">Card number</label>
+                    <input id="cardNumber" name="cardNumber" type="text" placeholder="Enter card number" class="input-order input-order-font">
+                    <label for="cvv" class="label">CVV</label>
+                    <input id="cvv" name="cvv" type="text" placeholder="Enter CVV" class="input-order input-order-font">
+                    <button class="btn-primary">Pay</button>
+                </form>
+            </div>
+        </div>
         <script src="index.js" type="module"></script>
     </body>
 </html>

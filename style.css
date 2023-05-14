@@ -5,6 +5,7 @@
 
 body {
     font-family: 'Smythe', Arial, sans-serif;
+    margin: 0;
 }
 
 main {
@@ -89,6 +90,10 @@ main {
     font-weight: bold;
     font-size: 1.2rem;
     background-color: #fff;
+}
+
+.btn-close {
+    padding: 0.7rem 0.5rem 0.5rem;
 }
 
 /* food items */
@@ -202,4 +207,90 @@ main {
 .title-main-order {
     text-align: center;
     margin: 2.5rem 0 4rem;
+}
+
+.h1-popup {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #000000;
+    text-align: center;
+    margin: 3rem 0 3rem 36px;
+    flex-grow: 2;
+}
+
+.label {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+
+}
+
+.input-order-font {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* Overlay */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.75);
+}
+
+#popup {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 520px;
+    max-height: 620px;
+}
+
+.form-order {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.input-order {
+    box-sizing: border-box;
+    height: 3rem;
+    border: 1.5px solid #757575;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-order .btn-primary {
+    margin-top: 1.5rem;
+}
+
+#popup-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1rem;
 }

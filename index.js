@@ -8,6 +8,8 @@ document.addEventListener('click', function(e){
         handleAddBtnClick(e.target.dataset.add)
     } else if(e.target.dataset.remove){
         handleRemoveBtnClick(e.target.dataset.remove)
+    } else if(e.target.id === 'btn-submit-order'){
+        //console.log('Order complete!')
     }
 })
 
