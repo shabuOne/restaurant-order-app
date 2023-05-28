@@ -1,6 +1,8 @@
-import menuArray from "./data.js";
+import {paymentStatus, menuArray} from "./data.js";
 /* import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 console.log(uuidv4()) */
+
+console.log(paymentStatus.success)
 
 document.addEventListener('click', function(e){
     //add button
@@ -10,6 +12,14 @@ document.addEventListener('click', function(e){
         handleRemoveBtnClick(e.target.dataset.remove)
     } else if(e.target.id === 'btn-submit-order'){
         //console.log('Order complete!')
+        document.getElementById('overlay').classList.toggle('hidden')
+    } else if(e.target.id === 'btn-popup-pay'){
+        //document.getElementById('overlay').classList.toggle('hidden')
+        paymentStatus.success = true;
+        window.localStorage.setItem('success', JSON.stringify(paymentStatus));
+    } else if(e.target.id === 'btn-popup-close' || e.target.id === 'popup-close-icon'){
+        //console.log('Popup closed!')
+        document.getElementById('overlay').classList.toggle('hidden')
     }
 })
 
@@ -99,6 +109,10 @@ function render(){
             document.getElementById('order-summary').classList.add('hidden');
         }
     });
+}
+
+function updateLocalStorage(){
+    
 }
 
 render()

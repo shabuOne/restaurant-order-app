@@ -25,4 +25,9 @@ const menuArray = [
     }
 ]
 
-export default menuArray;
+const paymentStatus = 
+    {
+        success: false
+    };
+
+export {paymentStatus, menuArray};
