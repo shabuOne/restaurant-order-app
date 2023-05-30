@@ -2,49 +2,61 @@ import {paymentStatus, menuArray} from "./data.js";
 /* import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 console.log(uuidv4()) */
 
-console.log(paymentStatus.success)
-
 document.addEventListener('click', function(e){
     //add button
     if(e.target.dataset.add){
-        handleAddBtnClick(e.target.dataset.add)
+        handleAddBtnClick(e.target.dataset.add);
     } else if(e.target.dataset.remove){
-        handleRemoveBtnClick(e.target.dataset.remove)
+        handleRemoveBtnClick(e.target.dataset.remove);
     } else if(e.target.id === 'btn-submit-order'){
-        //console.log('Order complete!')
-        document.getElementById('overlay').classList.toggle('hidden')
-    } else if(e.target.id === 'btn-popup-pay'){
-        //document.getElementById('overlay').classList.toggle('hidden')
-        paymentStatus.success = true;
-        window.localStorage.setItem('success', JSON.stringify(paymentStatus));
+        document.getElementById('overlay').classList.toggle('hidden');
+    } //Form Submit Button
+      else if(e.target.id === 'btn-popup-pay'){
+        e.preventDefault();
+        document.getElementById('overlay').classList.toggle('hidden');
+        //reset amount
+        menuArray.forEach(function(foodItem){
+            foodItem.amount = 0;
+        });
+        //update page
+        render();
+        //show success message
+        const paymentSuccessMessage = document.getElementById('payment-success');
+        paymentSuccessMessage.classList.toggle('hidden');
+        paymentSuccessMessage.innerHTML = `<p class="payment-success">Thank you! Your order is on its way! Enjoy 😋</p>`;
+        //hide success message after delay
+        setTimeout(function(){
+            paymentSuccessMessage.classList.toggle('hidden');
+            paymentSuccessMessage.innerHTML = ``;
+        }, 5000);
     } else if(e.target.id === 'btn-popup-close' || e.target.id === 'popup-close-icon'){
         //console.log('Popup closed!')
-        document.getElementById('overlay').classList.toggle('hidden')
+        document.getElementById('overlay').classList.toggle('hidden');
     }
-})
+});
 
 function handleAddBtnClick(uuid) {
     menuArray.forEach(function(foodItem){
         if(foodItem.uuid === uuid) {
-            foodItem.amount += 1
+            foodItem.amount += 1;
         }
-    })
-    render()
+    });
+    render();
 }
 
 function handleRemoveBtnClick(uuid) {
     menuArray.forEach(function(foodItem){
         if(foodItem.uuid === uuid) {
             if (foodItem.amount > 0) {
-                foodItem.amount -= 1
+                foodItem.amount -= 1;
             }
         }
-    })
-    render()
+    });
+    render();
 }
 
 function getFoodMenuHtml() {
-    let foodMenuHtml = ``
+    let foodMenuHtml = ``;
     menuArray.forEach(function(foodItem){
         foodMenuHtml += `
         <div class="food-item border-bottom">
@@ -60,8 +72,8 @@ function getFoodMenuHtml() {
                 <button id="btn-add-${foodItem.uuid}" class="btn-round" data-add="${foodItem.uuid}">+</button>
             </div>
         </div>
-        `
-    })
+        `;
+    });
     return foodMenuHtml;
 }
 
@@ -78,10 +90,10 @@ function getOrderSummaryHtml() {
                 <p class="order-item-title">${foodItem.name}</p>
                 <p class="order-item-price">$${foodItemTotal}</p>
             </div>
-            `
+            `;
         }
-    })
-    document.getElementById('order-item-total').textContent = `$${orderItemTotal}`
+    });
+    document.getElementById('order-item-total').textContent = `$${orderItemTotal}`;
     return orderSummaryHtml;
 }
 
@@ -111,8 +123,4 @@ function render(){
     });
 }
 
-function updateLocalStorage(){
-    
-}
-
-render()
+render();

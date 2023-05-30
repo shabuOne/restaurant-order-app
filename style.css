@@ -11,6 +11,7 @@ body {
 main {
     margin: 0 auto 2rem;
     max-width: 520px;
+    position: relative;
 }
 
 #container-header {
@@ -21,7 +22,8 @@ main {
 #header-background-image {
     width: 100%;
     max-height: 180px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 #header-background-text {
@@ -58,9 +60,7 @@ main {
     border-bottom: 2px solid #393333;
 }
 
-.hidden {
-    display: none;
-}
+
 
 /* Buttons */
 
@@ -246,6 +246,11 @@ main {
   'opsz' 48
 }
 
+.payment-success {
+    font-size: 2rem;
+    text-align: center;
+}
+
 /* Overlay */
 
 #overlay {
@@ -293,4 +298,24 @@ main {
     flex-direction: row;
     justify-content: flex-end;
     padding: 1rem;
+}
+
+/* Payment Success Message */
+.payment-success-div {
+    background-color: #ECFDF5;
+    color: #065F46;
+    height: 120px;
+    width: 90%;
+    max-width: 520px;  
+    border-radius: 8px;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Hidden Class Needs To Be at the Bottom */
+.hidden {
+    display: none;
 }
