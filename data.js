@@ -23,11 +23,6 @@ const menuArray = [
         uuid: '8ee8ebe7-6490-4616-afdc-176d5aa39725',
         amount: 0
     }
-]
+];
 
-const paymentStatus = 
-    {
-        success: false
-    };
-
-export {paymentStatus, menuArray};
+export {menuArray};
